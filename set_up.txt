@@ -1,0 +1,33 @@
+【起動順】
+Arduino → Processing → Python
+
+【セットアップ】
+< 注意 >
+・センサに繋がないと全体的な確認はできない
+・embulk run config.ymlの動作確認はできるはず
+
+< Arduino >
+・ツール > シリアルポート > COM5
+・スケッチ > ライブラリのインクルード > .ZIP形式のライブラリをインストール > Grove_Ultrasonic_Ranger-master
+
+< Processing >
+・Processing は最新版（3.x）を導入
+・コード2行目にcsvファイルへの絶対パスを書いてあるので、各自の環境に合わせて書き換えること
+
+< Python >
+・openjdk(Java) + Python3 + pyserial + Embulk が動く環境を用意する
+
+・フォルダ構成は
+	kh_python.py
+	config.yml
+	healthplanet
+　の3つが同階層になるようにしておく
+
+・Embulkに関してはここを参照　https://muziyoshiz.hatenablog.com/entry/2016/01/11/234921
+・csvファイルが存在しないとまずいので、あらかじめ
+	embulk run config.yml
+　を実行してcsvファイルを生成しておく
+
+・場合によっては、COM5を参照する権限を付与する必要がある（Permission deniedが発生する場合）
+	Ubuntu : sudo chmod 666 /dev/ttyS5
+

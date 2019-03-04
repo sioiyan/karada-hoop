@@ -1,0 +1,17 @@
+in:
+  type: healthplanet
+  login_id: m8682018
+  password: kitakata4
+  client_id: 893.3kM4gmtG6Q.apps.healthplanet.jp
+  client_secret: 1531460264922-2d1gCxcV1v0Dtut6GcGoQB9wTVRuA91ZCHYvrtNB
+  next_from: '2018-07-01 00:00:00'
+  lang: ja
+
+exec: {}
+out:
+  type: file
+  path_prefix: ./healthplanet/
+  file_ext: csv
+  formatter:
+    type: csv
+    default_timezone: 'Asia/Tokyo'
